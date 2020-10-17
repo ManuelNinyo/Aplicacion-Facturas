@@ -1,0 +1,30 @@
+<div class="jumbotron">Lista de Clientes</div>
+<table class="table table-striped">
+        
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nombre</th>
+            <th scope="col">email</th>
+            <th scope="col">N.I.T.</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.email}}</td> 
+            <td>{{cliente.nit}}</td> 
+            <td><a [routerLink]="['/Clientes',cliente.id]" class="btn btn-secondary btn-sm">ver facturas</a></td> 
+            <td><a [routerLink]="['/Clientes/crearFactura',cliente.id]" class="btn btn-primary btn-sm">añadir factura</a></td>
+            
+          </tr>
+
+          
+        </tbody>
+      </table>
+      <a [routerLink]="['/clientes/crearCliente']" class="btn btn-primary btn-lg form-control mt-5">agragar Cliente</a>
+      
+

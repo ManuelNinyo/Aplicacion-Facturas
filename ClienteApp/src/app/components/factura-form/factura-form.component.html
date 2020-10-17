@@ -1,0 +1,19 @@
+<div class="alert alert-primary mt-5 mb-0" role="alert">
+    ingrese datos de nueva factura para cliente {{cliente.nombre}}
+  </div>
+<form class="container" (ngSubmit)="onSubmit(userForm)" #userForm="ngForm"  novalidate="">
+    <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" class="form-control" id="ciudad" placeholder="ingrese ciudad" [(ngModel)]="factura.ciudad">
+      </div>
+    <div class="form-group">
+      <label for="subtotal" >Subtotal</label>
+      <input type="number" name="subtotal" [(ngModel)]="factura.subTotal" class="form-control" id="subtotal" placeholder="ingrase subtotal de factura" required>
+    </div>
+    <div class="alert alert-primary mt-0" role="alert">
+    
+        algunos datos se completan internamente
+      </div>
+    <button type="submit" class="btn btn-primary form-control">Submit</button>
+  </form>
+  

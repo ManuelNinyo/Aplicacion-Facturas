@@ -1,0 +1,12 @@
+.jumbotron{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: rgb(6, 8, 14);
+    color: brown;
+    font-size: 30px;
+}
+table{
+    font-size: 12px;
+}

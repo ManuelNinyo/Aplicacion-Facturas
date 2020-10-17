@@ -1,0 +1,52 @@
+<div class="jumbotron">Facturas de {{cliente.nombre}}</div>
+<table class="table table-striped">
+
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">codigo-factura</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">N.I.T</th>
+      <th scope="col">Total Factura</th>
+      <th scope="col">SubTotal</th>
+      <th scope="col">iva</th>
+      <th scope="col">retencion</th>
+      <th scope="col">Fecha creacion</th>
+      <th scope="col">estado</th>
+      <th scope="col">pagada</th>
+      <th scope="col">Fecha pago</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let factura of facturas,let i=index">
+      <th scope="row">{{i}}</th>
+      <td>{{factura.id}}</td>
+      <td>{{cliente.nombre}}</td>
+      <td>{{factura.ciudad}}</td>
+      <td>{{factura.cliente.nit}}</td>
+      <td>{{factura.total | currency}}</td>
+      <td>{{factura.subTotal | currency}}</td>
+      <td>{{factura.iva | currency}}</td>
+      <td>{{factura.retencion | currency}}</td>
+      <td>{{factura.fecha | date}}</td>
+      <td>
+        <div class="bg-danger pt-2 pb-2 text-white" *ngIf="factura.estado==='desactivado'">
+          {{factura.estado}}
+        </div>
+        <div *ngIf="factura.estado!=='desactivado'">
+            {{factura.estado}}
+          </div>
+      </td>
+      <td>{{factura.pagada}} </td>
+      <td>
+        <button *ngIf="factura.estado==='desactivado'" disabled="true" (click)="onClick(factura.id)" class="btn btn-ligth">recocodatorios enviados</button>
+        <button *ngIf="factura.estado!=='desactivado'" (click)="onClick(factura.id)" class="btn btn-success">enviar recocodatorio</button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+<a [routerLink]="['/Clientes/crearFactura',cliente.id]" class="btn btn-primary btn-lg form-control mt-5">añadir factura a cliente {{cliente.nombre}}</a>

@@ -1,0 +1,18 @@
+<div class="alert alert-primary mt-5 mb-0" role="alert">
+  ingrese datos de nuevo cliente
+</div>
+<form class="container" (ngSubmit)="onSubmit(userForm)" #userForm="ngForm"  novalidate="">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="form-control" id="nombre" placeholder="ingrese Nombre" [(ngModel)]="cliente.nombre">
+      </div>
+    <div class="form-group">
+      <label for="email" >Email</label>
+      <input type="email" name="email" [(ngModel)]="cliente.email" class="form-control" id="email" placeholder="ingrase email" required>
+    </div>
+    <div class="form-group">
+      <label for="nit">N.I.T.</label>
+      <input type="text" name="nit" class="form-control" id="nit" placeholder="ingrese nit" [(ngModel)]="cliente.nit">
+    </div>
+    <button type="submit" class="btn btn-primary form-control">Submit</button>
+  </form>
