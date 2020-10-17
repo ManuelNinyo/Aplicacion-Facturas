@@ -1,5 +1,5 @@
 # Aplicacion-Facturas
-#Prueba monolegal
+# Prueba monolegal
 • La aplicación se realizó utilizando .net core 3.1, un el servicio en la nube
 de mongoDb atlas y angular 10.
 • Para ejecutar la aplicación ejecute el código de el proyecto
